@@ -1,0 +1,94 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자유게시판</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .board-container {
+            width: 90%;
+            max-width: 1000px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th:nth-child(1), td:nth-child(1) {
+            width: 10%; /* 번호 칸 */
+            text-align: center; /* 번호 칸 가운데 정렬 */
+        }
+        th:nth-child(2), td:nth-child(2) {
+            width: 60%; /* 제목 칸 */
+            text-align: left; /* 제목 칸 왼쪽 정렬 */
+        }
+        th:nth-child(3), td:nth-child(3) {
+            width: 12%; /* 날짜 칸 */
+            text-align: center; /* 날짜 칸 가운데 정렬 */
+        }
+        th:nth-child(4), td:nth-child(4) {
+            width: 8%; /* 조회수 칸을 더 줄임 */
+            text-align: center; /* 조회수 칸 가운데 정렬 */
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-left: 10px;
+            padding: 6px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="board-container">
+        <h1>자유게시판</h1>
+        <hr>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="boardView.jsp?id=3">게시글 제목 3</a></td>
+                <td>2024-11-07</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="boardView.jsp?id=2">게시글 제목 2</a></td>
+                <td>2024-11-08</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="boardView.jsp?id=1">게시글 제목 1</a></td>
+                <td>2024-11-09</td>
+                <td>10</td>
+            </tr>
+        </table>
+        
+        <div class="button-container">
+            <button onclick="location.href='boardEdit.jsp'">수정</button>
+            <button onclick="location.href='boardWrite.jsp'">글쓰기</button>
+        </div>
+    </div>
+</body>
+</html>
