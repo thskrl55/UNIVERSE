@@ -132,9 +132,11 @@ request.setCharacterEncoding("utf-8");
         </div>
 
         <div class="buttons">
-            <a href="write.jsp">글쓰기</a>
-            <a href="listboard.jsp">목록보기</a>
-        </div>
+			<a href="edit.jsp?num=<%=num%>">수정</a> <a
+				href="delete.jsp?num=<%=num%>"
+				onclick="return confirm('정말 삭제하시겠습니까?');">삭제</a> <a
+				href="listboard.jsp">목록보기</a>
+		</div>
 
         <%
             strSQL = "UPDATE tblboard SET readcount=readcount+1 WHERE num = ?";
